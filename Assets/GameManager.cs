@@ -4,49 +4,49 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int PlayerScore1 = 0;
-    public static int PlayerScore2 = 0;
+    private static int _playerScore1 = 0;
+    private static int _playerScore2 = 0;
 
     public GUISkin layout;
 
-    GameObject theBall;
+    public GameObject _theBall;
 
     // Start is called before the first frame update
     void Start()
     {
-        theBall = GameObject.FindGameObjectWithTag("ball");
+        _theBall = GameObject.FindGameObjectWithTag("Ball");
     }
     
     public static void Score (string wallID) {
         if (wallID == "RightWall")
         {
-            PlayerScore1++;
+            _playerScore1++;
         } else
         {
-            PlayerScore2++;
+            _playerScore2++;
         }
     }
 
     void OnGUI () {
         GUI.skin = layout;
-        GUI.Label(new Rect(Screen.width / 2 - 150 - 12, 20, 100, 100), "" + PlayerScore1);
-        GUI.Label(new Rect(Screen.width / 2 + 150 + 12, 20, 100, 100), "" + PlayerScore2);
+        GUI.Label(new Rect(Screen.width / 2 - 150 - 12, 20, 100, 100), "" + _playerScore1);
+        GUI.Label(new Rect(Screen.width / 2 + 150 + 12, 20, 100, 100), "" + _playerScore2);
 
         if (GUI.Button(new Rect(Screen.width / 2 - 60, 35, 120, 53), "RESTART"))
         {
-            PlayerScore1 = 0;
-            PlayerScore2 = 0;
-            theBall.SendMessage("RestartGame", 0.5f, SendMessageOptions.RequireReceiver);
+            _playerScore1 = 0;
+            _playerScore2 = 0;
+            _theBall.SendMessage("RestartGame", 0.5f, SendMessageOptions.RequireReceiver);
         }
 
-        if (PlayerScore1 == 10)
+        if (_playerScore1 == 10)
         {
             GUI.Label(new Rect(Screen.width / 2 - 150, 200, 2000, 1000), "PLAYER ONE WINS");
-            theBall.SendMessage("ResetBall", null, SendMessageOptions.RequireReceiver);
-        } else if (PlayerScore2 == 10)
+            _theBall.SendMessage("ResetBall", null, SendMessageOptions.RequireReceiver);
+        } else if (_playerScore2 == 10)
         {
             GUI.Label(new Rect(Screen.width / 2 - 150, 200, 2000, 1000), "PLAYER TWO WINS");
-            theBall.SendMessage("ResetBall", null, SendMessageOptions.RequireReceiver);
+            _theBall.SendMessage("ResetBall", null, SendMessageOptions.RequireReceiver);
         }
     }
 

@@ -733,6 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   layout: {fileID: 11400000, guid: eb1e1cd8048ca1b16aaa368d2c42fd92, type: 2}
+  _theBall: {fileID: 763958980}
 --- !u!4 &1298423175
 Transform:
   m_ObjectHideFlags: 0
@@ -859,8 +860,8 @@ GameObject:
   - component: {fileID: 1654557882}
   - component: {fileID: 1654557881}
   - component: {fileID: 1654557880}
-  - component: {fileID: 1654557879}
   - component: {fileID: 1654557878}
+  - component: {fileID: 1654557879}
   m_Layer: 0
   m_Name: Paddle2
   m_TagString: Player
