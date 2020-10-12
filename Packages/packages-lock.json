@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.gwaredd.unium": {
+      "version": "https://github.com/gwaredd/unium.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "2468e17f3ef40dcd0bca8c5f7564045715205cca"
+    },
+    "com.mischief.markdownviewer": {
+      "version": "ssh://git@github.com/gwaredd/UnityMarkdownViewer.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "8e007931f2a8c2d8095ab13b531b8f710c5f8857"
+    },
     "com.unity.2d.animation": {
       "version": "5.0.1",
       "depth": 0,
