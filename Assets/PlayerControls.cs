@@ -14,7 +14,7 @@ public class PlayerControls : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        Debug.Log("Start()");
+        // Debug.Log("Start()");
     }
 
     private void OnMovement(InputValue value)
